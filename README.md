@@ -8,6 +8,19 @@
 查詢了一下，這題是考到一個觀念`四平方合定理`，完全沒聽過...
 今天先跳過...
 
+- [78][M] Subsets
+這一題是要找出陣列的所有的子集合，想法可以直接一點
+就是逐步的把每個組合加進去就好，在裡面的迴圈先加入現在的數字，然後再疊加之前已經存在的陣列，透過這個邏輯就能在雙層回圈內完成。
+```swift
+for num in nums {
+    for arr in result {
+        var newArr = [num]
+        newArr.append(contentsOf: arr)
+        result.append(newArr)
+    }
+}
+```
+
 - [230][M] Kth Smallest Element in a BST
 首先這題是BST，二元樹
 所以根據樹的特性，左邊節點一定小於父節點，右邊則反之。
